@@ -20,7 +20,7 @@ angularFoodwatcherApp.directive('typeIcon', function() {
 		},
 		link: function(scope, element, attrs) {
 			var value = mapping[scope.type];
-			scope.path = value ? 'img/' + value + '.png' : null;
+			scope.path = value ? 'images/' + value + '.png' : null;
 		}
 	};
 });

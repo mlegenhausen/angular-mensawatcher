@@ -13,7 +13,7 @@ angularFoodwatcherApp.directive('extraIcon', function() {
 		},
 		link: function(scope, element, attrs) {
 			var value = mapping[scope.extra];
-			scope.path = value ? 'img/' + value + '.png' : null;
+			scope.path = value ? 'images/' + value + '.png' : null;
 		}
 	};
 });
