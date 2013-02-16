@@ -29,12 +29,18 @@
               <a class="brand" href="#">Foodwatcher</a>
               <div class="nav-collapse collapse">
                 <ul class="nav">
-                  <li ng-repeat="(id, mensa) in mensas" nav-active="/mensa/{{id}}"><a href="#/mensa/{{id}}">{{mensa.name}}</a></li>
+                  <li ng-repeat="(id, mensa) in mensas" nav-active="/mensa/{{id}}">
+                    <a href="#/mensa/{{id}}">{{mensa.name}}</a>
+                  </li>
                 </ul>
-                <div class="nav pull-right" ng-switch on="loading" style="margin: 10px">
-                  <img src="images/ajax-loader.gif" ng-switch-when="true" />
-                  <a href="" ng-click="refresh()" ng-switch-default><i class="icon-refresh"></i></a>
-                </div>
+                <ul class="nav pull-right" ng-switch on="loading">
+                    <li ng-switch-when="true">
+                        <img src="images/ajax-loader.gif" style="padding: 11px 15px"/>
+                    </li>
+                    <li ng-switch-default>
+                        <a href="" ng-click="refresh()"><i class="icon-refresh"></i></a>
+                    </li>
+                </ul>
               </div><!--/.nav-collapse -->
             </div>
           </div>
