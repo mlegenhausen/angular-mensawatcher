@@ -31,6 +31,9 @@
                 <ul class="nav">
                   <li ng-repeat="(id, mensa) in mensas"><a href="#/mensa/{{id}}">{{mensa.name}}</a></li>
                 </ul>
+                <div class="nav pull-right">
+                  <img ng-show="loading" src="images/ajax-loader.gif" style="margin: 12px"/>
+                </div>
               </div><!--/.nav-collapse -->
             </div>
           </div>

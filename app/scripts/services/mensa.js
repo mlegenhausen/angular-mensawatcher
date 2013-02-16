@@ -1,5 +1,31 @@
 'use strict';
 
+angularFoodwatcherApp.factory('LoadingHttpInterceptor', [
+	'$rootScope', '$q',
+	function($rootScope, $q) {
+		var pending = 0;
+		return function(promise) {
+			if (pending === 0) {
+				$rootScope.$broadcast('event:http:loading');
+			}
+			pending++;
+			return promise.then(function(response) {
+				pending--;
+				if (pending === 0) {
+					$rootScope.$broadcast('event:http:loaded');
+				}
+				return response;
+			}, function(response) {
+				pending--;
+				if (pending === 0) {
+					$rootScope.$broadcast('event:http:loaded');
+				}
+				return $q.reject(response);
+			});
+		};
+	}
+]);
+
 angularFoodwatcherApp.service('Mensa', [
 	'$q', '$http', '$cacheFactory', 'DateTime',
 	function($q, $http, $cacheFactory, DateTime) {
@@ -31,7 +57,7 @@ angularFoodwatcherApp.service('Mensa', [
 			}
 		};
 
-		this.get = function(id, year, week) {
+		this.get = function(id) {
 			var year = DateTime.getCurrentYear();
 			var week = DateTime.getCurrentWeek();
 
@@ -65,20 +91,6 @@ angularFoodwatcherApp.service('Mensa', [
 
 		this.getAll = function() {
 			return $q.when(mensas);
-		};
-
-		this.getComments = function(menukey) {
-			return $http({
-				method: 'JSONP',
-				url: 'http://foodspl.appspot.com/comment',
-				params: {
-					format: 'json',
-					menukey: menukey,
-					callback: 'JSON_CALLBACK'
-				}
-			}).then(function(response) {
-				return response.data;
-			});
 		};
 	}
 ]);
