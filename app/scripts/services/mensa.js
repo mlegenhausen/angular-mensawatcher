@@ -27,9 +27,9 @@ angularFoodwatcherApp.factory('LoadingHttpInterceptor', [
 ]);
 
 angularFoodwatcherApp.service('Mensa', [
-	'$q', '$http', '$cacheFactory', 'DateTime',
-	function($q, $http, $cacheFactory, DateTime) {
-		var cache = $cacheFactory('mensa');
+	'$q', '$http', 'persistenceCache', 'DateTime',
+	function($q, $http, persistenceCache, DateTime) {
+		var cache = persistenceCache('mensa');
 		var mensas = {
 			air: {
 				name: 'Airport',
@@ -96,6 +96,10 @@ angularFoodwatcherApp.service('Mensa', [
 
 		this.isClosed = function() {
 			return DateTime.getCurrentDay() > 4;
+		};
+
+		this.clear = function() {
+			cache.removeAll();
 		};
 	}
 ]);

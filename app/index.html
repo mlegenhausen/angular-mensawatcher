@@ -31,8 +31,9 @@
                 <ul class="nav">
                   <li ng-repeat="(id, mensa) in mensas"><a href="#/mensa/{{id}}">{{mensa.name}}</a></li>
                 </ul>
-                <div class="nav pull-right">
-                  <img ng-show="loading" src="images/ajax-loader.gif" style="margin: 12px"/>
+                <div class="nav pull-right" ng-switch on="loading" style="margin: 12px">
+                  <img src="images/ajax-loader.gif" ng-switch-when="true" />
+                  <a href="" ng-click="refresh()" ng-switch-default><i class="icon-refresh"></i></a>
                 </div>
               </div><!--/.nav-collapse -->
             </div>
@@ -47,6 +48,7 @@
         <script src="scripts/vendor/angular-locale_de-de.js"></script>
         <script src="scripts/vendor/ui-bootstrap-tpls.js"></script>
         <script src="scripts/vendor/moment.js"></script>
+        <script src="scripts/vendor/lawnchair.js"></script>
 
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/app.js"></script>
@@ -56,6 +58,7 @@
         <script src="scripts/directives/extra-icon.js"></script>
         <script src="scripts/services/datetime.js"></script>
         <script src="scripts/services/mensa.js"></script>
+        <script src="scripts/services/persistence-cache.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

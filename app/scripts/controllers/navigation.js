@@ -1,8 +1,8 @@
 'use strict';
 
 angularFoodwatcherApp.controller('NavigationCtrl', [
-	'$scope', 'Mensa',
-	function($scope, Mensa) {
+	'$scope', '$route', 'Mensa',
+	function($scope, $route, Mensa) {
 		$scope.mensas = Mensa.getAll();
 
 		$scope.loading = false;
@@ -13,5 +13,10 @@ angularFoodwatcherApp.controller('NavigationCtrl', [
 		$scope.$on('event:http:loaded', function() {
 			$scope.loading = false;
 		});
+
+		$scope.refresh = function() {
+			Mensa.clear();
+			$route.reload();
+		};
 	}
 ]);
