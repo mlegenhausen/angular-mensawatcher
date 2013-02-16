@@ -14,4 +14,9 @@ angularFoodwatcherApp.service('DateTime', function() {
 	this.getDaysOfWeek = function(year, week, day) {
 		return moment().years(year).week(week).day(day + 1).toDate();
 	};
+
+	this.getNextMonday = function() {
+		var nextWeek = this.getCurrentWeek() + 1;
+		return moment().week(nextWeek).day(1).toDate();
+	};
 });

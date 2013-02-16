@@ -16,6 +16,12 @@ var angularFoodwatcherApp = angular.module('angularFoodwatcherApp', ['ui.bootstr
         resolve: {
           mensa: function($route, Mensa) {
             return Mensa.get($route.current.params.id);
+          },
+          isClosed: function(Mensa) {
+            return Mensa.isClosed();
+          },
+          nextMonday: function(DateTime) {
+            return DateTime.getNextMonday();
           }
         }
       })

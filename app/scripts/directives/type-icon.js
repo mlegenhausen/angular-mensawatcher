@@ -8,7 +8,7 @@ angularFoodwatcherApp.directive('typeIcon', function() {
 		82: 'beef',
 		71: 'chicken',
 		76: 'lamb',
-		79: 'closed'
+		79: 'spacer'
 	};
 
 	return {

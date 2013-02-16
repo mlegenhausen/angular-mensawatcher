@@ -1,13 +1,10 @@
 'use strict';
 
 angularFoodwatcherApp.controller('MensaCtrl', [
-	'$scope', 'DateTime', 'mensa',
-	function($scope, DateTime, mensa) {
-		var today = DateTime.getCurrentDay() - 1;
-		angular.forEach(mensa.menues, function(menu, index) {
-			menu.selected = index === today;
-		});
-
+	'$scope', 'DateTime', 'mensa', 'isClosed', 'nextMonday',
+	function($scope, DateTime, mensa, isClosed, nextMonday) {
 		$scope.mensa = mensa;
+		$scope.isClosed = isClosed;
+		$scope.nextMonday = nextMonday;
 	}
 ]);

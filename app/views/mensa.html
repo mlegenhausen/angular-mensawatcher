@@ -4,8 +4,12 @@
 	</div>
 	<div class="row">
 		<div class="span12">
+			<div class="alert alert-error alert-block">
+				<h4>{{mensa.title}} ist gerade geschlossen</h4>
+				Die Mensa hat über das Wochenende geschlossen. Der Speiseplan für die nächste Woche ist ab <strong>{{nextMonday | date:'EEE dd.MM.yyyy'}}</strong> verfügbar.
+			</div>
 			<tabs>
-				<pane heading="menu.date | date:'EEE dd.MM.yyyy'" ng-repeat="menu in mensa.menues | orderBy:'day'" active="menu.selected">
+				<pane heading="menu.date | date:'EEE dd.MM.yyyy'" ng-repeat="menu in mensa.menues | orderBy:'day'" active="menu.active">
 					<div ng-repeat="food in menu.foods">
 						<div class="row">
 							<div class="span1">

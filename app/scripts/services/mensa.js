@@ -61,8 +61,7 @@ angularFoodwatcherApp.service('Mensa', [
 			var year = DateTime.getCurrentYear();
 			var week = DateTime.getCurrentWeek();
 
-			var cacheKey = id + ':' + year + ':' + week;
-			var result = cache.get(cacheKey);
+			var result = cache.get(id);
 			
 			if (result) {
 				return $q.when(result);
@@ -82,15 +81,21 @@ angularFoodwatcherApp.service('Mensa', [
 				var mensa = response.data;
 				angular.extend(mensa, mensas[id]);
 				angular.forEach(mensa.menues, function(menu, index) {
+					var day = DateTime.getCurrentDay() - 1;
 					menu.date = DateTime.getDaysOfWeek(year, week, index);
+					menu.active = day === index || (index === 4 && day > 4);
 				});
-				cache.put(cacheKey, mensa);
+				cache.put(id, mensa);
 				return mensa;
 			});
 		};
 
 		this.getAll = function() {
 			return $q.when(mensas);
+		};
+
+		this.isClosed = function() {
+			return DateTime.getCurrentDay() > 4;
 		};
 	}
 ]);
