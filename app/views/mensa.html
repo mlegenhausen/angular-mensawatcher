@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="span12">
 			<div class="alert alert-error alert-block">
-				<h4>{{mensa.title}} ist gerade geschlossen</h4>
+				<h4>{{mensa.title}} ist heute geschlossen</h4>
 				Die Mensa hat über das Wochenende geschlossen. Der Speiseplan für die nächste Woche ist ab <strong>{{nextMonday | date:'EEE dd.MM.yyyy'}}</strong> verfügbar.
 			</div>
 			<tabs>
@@ -16,7 +16,7 @@
 								<type-icon type="food.type" style="margin:7px 0 0 7px"/>
 							</div>
 							<div class="span7">
-								<h4>{{food.title}} <extra-icon extra="food.extra" /></h4>
+								<h4>{{food.title}} <small ng-bind="{84: 'mit Suppe', 78: 'mit Dessert'}[food.extra]"></small></h4>
 								<p>{{food.desc}}</p>
 							</div>
 							<div class="span3">
