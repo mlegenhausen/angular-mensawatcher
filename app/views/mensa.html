@@ -4,7 +4,7 @@
 	</div>
 	<div class="row">
 		<div class="span12">
-			<div class="alert alert-error alert-block">
+			<div class="alert alert-error alert-block" ng-show="isClosed">
 				<h4>{{mensa.title}} ist heute geschlossen</h4>
 				Die Mensa hat über das Wochenende geschlossen. Der Speiseplan für die nächste Woche ist ab <strong>{{nextMonday | date:'EEE dd.MM.yyyy'}}</strong> verfügbar.
 			</div>

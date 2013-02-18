@@ -1,6 +1,6 @@
 'use strict';
 
-angularFoodwatcherApp.controller('MensaCtrl', [
+app.controller('MensaCtrl', [
 	'$scope', 'DateTime', 'mensa', 'isClosed', 'nextMonday',
 	function($scope, DateTime, mensa, isClosed, nextMonday) {
 		$scope.mensa = mensa;

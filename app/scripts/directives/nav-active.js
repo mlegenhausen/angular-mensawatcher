@@ -1,4 +1,4 @@
-angularFoodwatcherApp.directive('navActive', [
+app.directive('navActive', [
 	'$rootScope', '$location',
 	function($rootScope, $location) {
 		return {

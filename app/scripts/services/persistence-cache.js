@@ -1,4 +1,4 @@
-angularFoodwatcherApp.factory('persistenceCache', [
+app.factory('persistenceCache', [
 	'$cacheFactory',
 	function($cacheFactory) {
 		return function(name, options) {

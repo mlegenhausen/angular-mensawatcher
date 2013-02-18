@@ -1,4 +1,4 @@
-angularFoodwatcherApp.directive('typeIcon', function() {
+app.directive('typeIcon', function() {
 	var mapping = {
 		86: 'vegetarian',
 		80: 'vegan',

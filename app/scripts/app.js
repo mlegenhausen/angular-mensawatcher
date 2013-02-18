@@ -1,6 +1,6 @@
 'use strict';
 
-var angularFoodwatcherApp = angular.module('angularFoodwatcherApp', ['ui.bootstrap'])
+var app = angular.module('app', ['ui.bootstrap'])
   .config(['$httpProvider', function($httpProvider) {
     $httpProvider.responseInterceptors.push('LoadingHttpInterceptor');
   }])

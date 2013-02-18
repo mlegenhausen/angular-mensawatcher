@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="styles/main.css"/>
 
     </head>
-    <body ng-app="angularFoodwatcherApp" ng-cloak>
+    <body ng-app="app" ng-cloak>
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -47,7 +47,12 @@
         </div>
 
         <!-- Add your site or application content here -->
-        <div class="container" ng-view></div>
+        <div class="container">
+            <div ng-view></div>
+            <footer>
+                <p>Copyright</p>
+            </footer>
+        </div>
 
         <script src="scripts/vendor/jquery.js"></script>
         <script src="scripts/vendor/angular.js"></script>
@@ -62,7 +67,6 @@
         <script src="scripts/controllers/mensa.js"></script>
         <script src="scripts/directives/nav-active.js"></script>
         <script src="scripts/directives/type-icon.js"></script>
-        <script src="scripts/directives/extra-icon.js"></script>
         <script src="scripts/services/datetime.js"></script>
         <script src="scripts/services/mensa.js"></script>
         <script src="scripts/services/persistence-cache.js"></script>

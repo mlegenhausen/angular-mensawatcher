@@ -1,6 +1,6 @@
 'use strict';
 
-angularFoodwatcherApp.controller('NavigationCtrl', [
+app.controller('NavigationCtrl', [
 	'$scope', '$route', 'Mensa',
 	function($scope, $route, Mensa) {
 		$scope.mensas = Mensa.getAll();

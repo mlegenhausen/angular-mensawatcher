@@ -3,7 +3,7 @@
 describe('Controller: MensaCtrl', function() {
 
   // load the controller's module
-  beforeEach(module('angularFoodwatcherApp'));
+  beforeEach(module('app'));
 
   var MensaCtrl,
     scope;

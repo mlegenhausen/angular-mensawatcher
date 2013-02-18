@@ -1,4 +1,4 @@
-angularFoodwatcherApp.service('DateTime', function() {
+app.service('DateTime', function() {
 	this.getCurrentWeek = function() {
 		return moment().week();
 	};

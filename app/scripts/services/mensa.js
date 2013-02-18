@@ -1,6 +1,6 @@
 'use strict';
 
-angularFoodwatcherApp.factory('LoadingHttpInterceptor', [
+app.factory('LoadingHttpInterceptor', [
 	'$rootScope', '$q',
 	function($rootScope, $q) {
 		var pending = 0;
@@ -26,7 +26,7 @@ angularFoodwatcherApp.factory('LoadingHttpInterceptor', [
 	}
 ]);
 
-angularFoodwatcherApp.service('Mensa', [
+app.service('Mensa', [
 	'$q', '$http', 'persistenceCache', 'DateTime',
 	function($q, $http, persistenceCache, DateTime) {
 		var cache = persistenceCache('mensa');
@@ -95,7 +95,7 @@ angularFoodwatcherApp.service('Mensa', [
 		};
 
 		this.isClosed = function() {
-			return DateTime.getCurrentDay() > 4;
+			return DateTime.getCurrentDay() > 5;
 		};
 
 		this.clear = function() {
