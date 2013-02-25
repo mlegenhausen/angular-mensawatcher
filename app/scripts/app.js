@@ -14,15 +14,15 @@ var app = angular.module('app', ['ui.bootstrap'])
         templateUrl: 'views/mensa.html',
         controller: 'MensaCtrl',
         resolve: {
-          mensa: function($route, Mensa) {
+          mensa: ['$route', 'Mensa', function($route, Mensa) {
             return Mensa.get($route.current.params.id);
-          },
-          isClosed: function(Mensa) {
+          }],
+          isClosed: ['Mensa', function(Mensa) {
             return Mensa.isClosed();
-          },
-          nextMonday: function(DateTime) {
+          }],
+          nextMonday: ['DateTime', function(DateTime) {
             return DateTime.getNextMonday();
-          }
+          }]
         }
       })
       .otherwise({
