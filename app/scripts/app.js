@@ -2,7 +2,7 @@
 
 var app = angular.module('app', ['ui.bootstrap'])
   .config(['$httpProvider', function($httpProvider) {
-    $httpProvider.responseInterceptors.push('LoadingHttpInterceptor');
+    $httpProvider.responseInterceptors.push('HttpLoadingInterceptor');
   }])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider

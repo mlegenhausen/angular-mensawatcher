@@ -1,3 +1,5 @@
 .DS_Store
 .sass-cache
 temp/
+app/styles/main.css
+dist/
