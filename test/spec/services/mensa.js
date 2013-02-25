@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: mensa', function () {
+describe('Service: Mensa', function () {
 
   // load the service's module
   beforeEach(module('app'));
 
   // instantiate service
-  var mensa;
-  beforeEach(inject(function(_mensa_) {
-    mensa = _mensa_;
+  var Mensa;
+  beforeEach(inject(function(_Mensa_) {
+    Mensa = _Mensa_;
   }));
 
   it('should do something', function () {
-    expect(!!mensa).toBe(true);
+    expect(!!Mensa).toBe(true);
   });
 
 });
