@@ -1,8 +1,11 @@
 'use strict';
 
-var app = angular.module('app', ['ui.bootstrap'])
+var app = angular.module('app', ['ui.bootstrap', 'analytics'])
 	.config(['$httpProvider', function($httpProvider) {
 		$httpProvider.responseInterceptors.push('HttpLoadingInterceptor');
+	}])
+	.config(['AnalyticsProvider', function(AnalyticsProvider) {
+		AnalyticsProvider.account = 'UA-38989467-1';
 	}])
 	.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
