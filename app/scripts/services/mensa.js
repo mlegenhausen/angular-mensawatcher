@@ -34,9 +34,10 @@ app.service('Mensa', [
 		this.get = function(id) {
 			var year = DateTime.getCurrentYear();
 			var week = DateTime.getCurrentWeek();
-
-			var result = cache.get(id);
 			
+			// Create a unique mensa key for the cache
+			var cacheKey = [id, year, week].join(':');
+			var result = cache.get(cacheKey);
 			if (result) {
 				return $q.when(result);
 			}
@@ -59,7 +60,7 @@ app.service('Mensa', [
 					menu.date = DateTime.getDaysOfWeek(year, week, index);
 					menu.active = day === index || (index === 4 && day > 4);
 				});
-				cache.put(id, mensa);
+				cache.put(cacheKey, mensa);
 				return mensa;
 			});
 		};

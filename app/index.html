@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="styles/main.css"/>
 
     </head>
-    <body ng-app="app" ng-cloak>
+    <body ng-app="app" ng-controller="AppCtrl" ng-cloak>
 
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
@@ -23,7 +23,7 @@
             <script src="scripts/vendor/json3.min.js"></script>
         <![endif]-->
 
-        <div class="navbar navbar-fixed-top" ng-controller="NavigationCtrl">
+        <div class="navbar navbar-fixed-top">
           <div class="navbar-inner">
             <div class="container">
               <a class="brand" href="#">Foodwatcher</a>
@@ -48,7 +48,12 @@
 
         <!-- Add your site or application content here -->
         <div class="container">
+            <div class="alert alert-error" ng-show="mensaError">
+                <strong>Fehler:</strong> Die Daten für die <strong>{{mensaError.title}}</strong> sind zurzeit nicht verfügbar. Versuchen Sie es später noch einmal.
+            </div>
+
             <ng-view></ng-view>
+            
             <footer>
                 <p>&copy; Copyright 2013</p>
             </footer>
@@ -63,7 +68,8 @@
 
         <!-- build:js scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/navigation.js"></script>
+        <script src="scripts/controllers/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/mensa.js"></script>
         <script src="scripts/directives/nav-active.js"></script>
         <script src="scripts/directives/type-icon.js"></script>

@@ -1,11 +1,14 @@
 app.directive('navActive', [
-	'$rootScope', '$location',
-	function($rootScope, $location) {
+	'$rootScope', '$location', '$timeout',
+	function($rootScope, $location, $timeout) {
 		return {
 			link: function(scope, element, attrs) {
-				$rootScope.$on('$routeChangeSuccess', function() {
+				function activate() {
 					element.toggleClass('active', attrs.navActive === $location.path());
-				});
+				}
+
+				$rootScope.$on('$routeChangeSuccess', activate);
+				$timeout(activate);
 			}
 		};
 	}
