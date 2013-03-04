@@ -1,0 +1,37 @@
+<section>
+	<div class="page-header">
+		<h1>{{mensa.title}}</h1>
+	</div>
+	<div class="row">
+		<div class="span12">
+			<div class="alert alert-error alert-block" ng-show="isClosed">
+				<h4>{{mensa.title}} ist heute geschlossen</h4>
+				Die Mensa hat über das Wochenende geschlossen. Der Speiseplan für die nächste Woche ist ab <strong>{{nextMonday | date:'EEE dd.MM.yyyy'}}</strong> verfügbar.
+			</div>
+			<tabs>
+				<pane heading="menu.date | date:'EEE dd.MM.yyyy'" ng-repeat="menu in mensa.menues | orderBy:'day'" active="menu.active">
+					<div ng-repeat="food in menu.foods">
+						<div class="row">
+							<div class="span1">
+								<type-icon type="food.type" style="margin:7px 0 0 7px"/>
+							</div>
+							<div class="span7">
+								<h4>{{food.title}} <small ng-bind="{84: 'mit Suppe', 78: 'mit Dessert'}[food.extra]"></small></h4>
+								<p>{{food.desc}}</p>
+							</div>
+							<div class="span3">
+								<dl class="dl-horizontal">
+									<dt>Student</dt>
+									<dd>{{food.studentprice}}</dd>
+									<dt>Angestellter</dt>
+									<dd>{{food.staffprice}}</dd>
+								</dl>
+							</div>
+						</div>
+						<hr/>
+					</div>
+				</pane>
+			</tabs>
+		</div>
+	</div>
+</section>

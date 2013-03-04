@@ -1,1 +1,79 @@
-My GitHub Page
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <title></title>
+        <meta name="description" content=""/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="styles/bfa7df9d.main.css"/>
+
+    </head>
+    <body ng-app="app" ng-controller="AppCtrl" ng-cloak>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+        
+        <!--[if lt IE 9]>
+            <script src="scripts/vendor/61e2728c.es5-shim.min.js"></script>
+            <script src="scripts/vendor/241d7c33.json3.min.js"></script>
+        <![endif]-->
+
+        <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <a class="brand" href="#">Foodwatcher</a>
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                  <li ng-repeat="(id, mensa) in mensas" nav-active="/mensa/{{id}}">
+                    <a href="#/mensa/{{id}}">{{mensa.name}}</a>
+                  </li>
+                </ul>
+                <ul class="nav pull-right" ng-switch on="loading">
+                    <li ng-switch-when="true">
+                        <img src="images/ajax-loader.gif" style="padding: 11px 15px"/>
+                    </li>
+                    <li ng-switch-default>
+                        <a href="" ng-click="refresh()"><i class="icon-refresh"></i></a>
+                    </li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Add your site or application content here -->
+        <div class="container">
+            <div class="alert alert-error" ng-show="mensaError">
+                <strong>Fehler:</strong> Die Daten für die <strong>{{mensaError.title}}</strong> sind zurzeit nicht verfügbar. Versuchen Sie es später noch einmal.
+            </div>
+
+            <ng-view></ng-view>
+            
+            <footer>
+                <p>&copy; Copyright 2013</p>
+            </footer>
+        </div>
+
+        <script src="scripts/vendor/08c235d3.jquery.js"></script>
+        <script src="scripts/vendor/f0cf6508.angular.js"></script>
+        <script src="scripts/vendor/4340b409.angular-locale_de-de.js"></script>
+        <script src="scripts/vendor/adff6a7c.ui-bootstrap-tpls.js"></script>
+        <script src="scripts/vendor/fbc17f82.moment.js"></script>
+        <script src="scripts/vendor/20f581dd.lawnchair.js"></script>
+
+        <script src="scripts/ab09e2c8.scripts.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>

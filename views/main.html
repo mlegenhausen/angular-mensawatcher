@@ -1,0 +1,7 @@
+<div class="hero-unit">
+  <h1>Willkommen beim Foodwatcher</h1>
+  <p>Wähle eine Mensa und schau was es zu essen gibt:</p>
+  <ul>
+      <li ng-repeat="(id, mensa) in mensas"><a href="#/mensa/{{id}}">{{mensa.name}}</a></li>
+  </ul>
+</div>
