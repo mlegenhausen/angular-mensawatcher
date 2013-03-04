@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-# Time: Mon Mar 04 2013 11:40:34 GMT+0100 (CET)
+# Time: Mon Mar 04 2013 13:04:55 GMT+0100 (CET)
 # This manifest was created by confess.js, http://github.com/jamesgpearce/confess
 #
 # Retrieved URL: http://localhost:3501/#/
@@ -21,17 +21,17 @@ CACHE MANIFEST
 #  configFile: /Users/mlegenhausen/nvm/v0.8.11/lib/node_modules/yeoman/lib/support/confess.json
 
 CACHE:
-http://localhost:3501/images/glyphicons-halflings-white.png?1362393623
-http://localhost:3501/images/glyphicons-halflings.png?1362393623
+http://localhost:3501/images/glyphicons-halflings-white.png?1362394748
+http://localhost:3501/images/glyphicons-halflings.png?1362394748
 http://www.google-analytics.com/ga.js
-scripts/ab09e2c8.scripts.js
+scripts/9bde5731.scripts.js
 scripts/vendor/08c235d3.jquery.js
 scripts/vendor/20f581dd.lawnchair.js
 scripts/vendor/4340b409.angular-locale_de-de.js
 scripts/vendor/adff6a7c.ui-bootstrap-tpls.js
 scripts/vendor/f0cf6508.angular.js
 scripts/vendor/fbc17f82.moment.js
-styles/bfa7df9d.main.css
+styles/995df835.main.css
 
 NETWORK:
 *
