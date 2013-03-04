@@ -1,7 +1,7 @@
 angular-foodwatcher
 ===================
 
-Angular.JS App of the [Android Foodwatcher Application](https://code.google.com/p/foodwatcher/).
+Angular.JS App of the [Android Foodwatcher Application](https://code.google.com/p/foodwatcher/). [Click to see the app directly](http://mlegenhausen.github.com/angular-foodwatcher).
 
 This Application is used for educational purpose and should show some best practices when working with Angular.JS, Grunt, yeoman.
 
