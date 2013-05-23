@@ -33,7 +33,7 @@ All changes made locally to the code will result in a automatic reload of the br
 
 ## Deploy it
 
-If want to run your own instance of the angular-foodwatcher app, you can build your own version via:
+If want to run your own instance of the angular-mensawatcher app, you can build your own version via:
 
 ```
 yeoman build
