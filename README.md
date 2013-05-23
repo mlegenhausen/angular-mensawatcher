@@ -1,7 +1,7 @@
-angular-foodwatcher
+angular-mensawatcher
 ===================
 
-Angular.JS App of the [Android Foodwatcher Application](https://code.google.com/p/foodwatcher/). [Click to see the app directly](http://mlegenhausen.github.com/angular-foodwatcher).
+Angular.JS App of the [Android MensaWatcher Application](https://code.google.com/p/mensawatcher/). [Click to see the app directly](http://mlegenhausen.github.com/angular-foodwatcher).
 
 This Application is used for educational purpose and should show some best practices when working with Angular.JS, Grunt, yeoman.
 
@@ -22,12 +22,12 @@ npm install yeoman -g
 ## Run it locally
 
 ```
-git clone https://github.com/mlegenhausen/angular-foodwatcher.git
-cd angular-foodwatcher
+git clone https://github.com/mlegenhausen/angular-mensawatcher.git
+cd angular-mensawatcher
 yeoman server
 ```
 
-yeoman will automatically run a local webserver and opens a browser window with the angular-foodwatcher app in it.
+yeoman will automatically run a local webserver and opens a browser window with the angular-mensawatcher app in it.
 
 All changes made locally to the code will result in a automatic reload of the browser window.
 
